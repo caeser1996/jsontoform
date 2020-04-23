@@ -1,0 +1,10 @@
+/node_modules
+/dist
+.nuxt
+
+.idea
+*.secret
+deploy*
+.netlify/
+
+.now
