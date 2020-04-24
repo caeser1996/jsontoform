@@ -1,0 +1,81 @@
+{
+  "name": "@dev7ch/vuetify-jsonschema-form",
+  "version": "0.0.15",
+  "description": "Generate forms for the vuetify UI library (vuejs) based on annotated JSON schemas.",
+  "author": "Sumanta Mukhopadhyay
+  "scripts": {
+    "build": "rm -rf dist && webpack && cp index.html dist/",
+    "lint": "eslint --ext js,vue .",
+    "dev": "webpack-dev-server",
+    "postpublish": "git commit -m 'npm published' --allow-empty && git push",
+    "prepublish": "npm run lint && npm run build",
+    "compile": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/main.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/main.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/main.min.js"
+  },
+  "main": "dist/main.js",
+  "module": "dist/main.esm.js",
+  "unpkg": "dist/main.min.js",
+  "browser": {
+    "./sfc": "lib/index.vue"
+  },
+  "dependencies": {
+    "filepond": "^4.4.9",
+    "filepond-plugin-file-metadata": "^1.0.6",
+    "filepond-plugin-image-preview": "^4.2.1",
+    "konva": "^3.3.3",
+    "markdown-it": "^8.4.2",
+    "match-all": "^1.2.5",
+    "property-expr": "^1.5.1",
+    "vue-color": "^2.7.0",
+    "vue-filepond": "^5.1.1",
+    "vue-json-schema": "^1.1.1",
+    "vue-konva": "^2.0.7",
+    "vue-swatches": "^1.0.3",
+    "vuedraggable": "^2.20.0",
+    "vuetify": "^1.5.14"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@mdi/font": "^3.6.95",
+    "axios": "^0.18.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^1.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "file-loader": "^3.0.1",
+    "hjson": "^3.1.2",
+    "mini-css-extract-plugin": "^0.4.5",
+    "sass": "^1.17.4",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue": "^2.6.10",
+    "vue-axios": "^2.1.4",
+    "vue-cli-plugin-vuetify": "https://github.com/vuetifyjs/vue-cli-plugin-vuetify.git#dev",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify": "^1.5.14",
+    "vuetify-loader": "^1.2.2",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "bugs": {
+    "url": "https://github.com/dev7ch/vuetify-jsonschema-form/issues"
+  },
+  "homepage": "https://github.com/dev7ch/vuetify-jsonschema-form#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev7ch/vuetify-jsonschema-form.git"
+  }
+}
